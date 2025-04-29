@@ -50,9 +50,15 @@ climate:
         target_temperature: 0.5
         current_temperature: 0.1
     preset:
+      - name: "Home"
+        default_target_temperature_low: 20.0 °C
+        default_target_temperature_high: 24.0 °C
+      - name: "Away"
+        default_target_temperature_low: 16.0 °C
+        default_target_temperature_high: 28.0 °C
       - name: "Off"
-        default_target_temperature_low: 10.0 °C
-        default_target_temperature_high: 26.5 °C
+
+
     idle_action:
       - switch.turn_off: relay_${heater_relay}
     default_preset: "Off"
