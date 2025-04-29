@@ -47,10 +47,12 @@ climate:
       min_temperature: ${temp_min} ${temp_units}
       max_temperature: ${temp_max} ${temp_units}
       temperature_step:
-        target_temperature: 0.5  # This is hard coded for now as ESPHome isn't supporting a substitution here. In contact with support.
+        target_temperature: 0.5
         current_temperature: 0.1
-    default_target_temperature_low: 10.0 °C
-    default_target_temperature_high: 26.5 °C
+    preset:
+      - name: "Off"
+        default_target_temperature_low: 10.0 °C
+        default_target_temperature_high: 26.5 °C
     idle_action:
       - switch.turn_off: relay_${heater_relay}
     default_preset: "Off"
@@ -60,6 +62,7 @@ climate:
       - lambda: |-
           page_climate->execute();
           page_home->execute();
+
 
 globals:
   ##### Is embedded thermostat visible on climate page? #####
