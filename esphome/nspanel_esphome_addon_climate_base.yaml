@@ -44,6 +44,7 @@ climate:
     sensor: temp_nspanel
     min_idle_time: ${min_idle_time}s
     min_cooling_off_time: 300s
+    min_cooling_run_time: 300s
     visual:
       min_temperature: ${temp_min} ${temp_units}
       max_temperature: ${temp_max} ${temp_units}
